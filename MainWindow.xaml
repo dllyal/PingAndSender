@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PingAndSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="PingAndSender" Height="450" Width="800">
     <Grid>
         <Label Content="测试地址" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.125,0.56"/>
         <Label Content="轮回时间" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
         <Label Content="超时时间" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
         <Label Content="超时次数" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_test_addr" HorizontalAlignment="Left" Height="23" Margin="73,10,0,0" TextWrapping="Wrap" Text="192.168.101.18" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBox_round_time" HorizontalAlignment="Left" Height="23" Margin="73,40,0,0" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBox_round_time" HorizontalAlignment="Left" Height="23" Margin="73,40,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_time_out" HorizontalAlignment="Left" Height="23" Margin="73,70,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_time_out_count" HorizontalAlignment="Left" Height="23" Margin="73,100,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="120"/>
         <Button Content="开始" HorizontalAlignment="Left" Margin="245,22,0,0" VerticalAlignment="Top" Width="75" Click="Start_Button_Click"/>
+        <Label x:Name="Lable_last_time" Content="0" HorizontalAlignment="Left" Margin="367,16,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>
