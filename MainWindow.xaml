@@ -11,12 +11,20 @@
         <Label Content="轮回时间" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
         <Label Content="超时时间" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
         <Label Content="超时次数" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="请求地址" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_test_addr" HorizontalAlignment="Left" Height="23" Margin="73,10,0,0" TextWrapping="Wrap" Text="192.168.101.18" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_round_time" HorizontalAlignment="Left" Height="23" Margin="73,40,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_time_out" HorizontalAlignment="Left" Height="23" Margin="73,70,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBox_time_out_count" HorizontalAlignment="Left" Height="23" Margin="73,100,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="120"/>
         <Button Content="开始" HorizontalAlignment="Left" Margin="245,22,0,0" VerticalAlignment="Top" Width="75" Click="Start_Button_Click"/>
-        <Label x:Name="Lable_last_time" Content="0" HorizontalAlignment="Left" Margin="73,144,0,0" VerticalAlignment="Top" />
+        <Label x:Name="Lable_last_time" Content="0" HorizontalAlignment="Left" Margin="692,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="10.647,-2.84" />
+        <TextBox x:Name="TextBox_client_addr" HorizontalAlignment="Left" Height="23" Margin="73,140,0,0" TextWrapping="Wrap" Text="http://192.168.1.247/a/submit.php?local_lguage_set=zh&amp;cache=0.23770865418472376" VerticalAlignment="Top" Width="684"/>
+        <Button Content="停止" HorizontalAlignment="Left" Margin="245,51,0,0" VerticalAlignment="Top" Width="75" Click="Stop_Button_Click"/>
+        <Label x:Name="Lable_round_msg" Content="MSG" HorizontalAlignment="Left" Margin="414,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Lable_test_result" Content="Result" HorizontalAlignment="Left" Margin="414,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="状态：" HorizontalAlignment="Left" Margin="641,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Lable_state" Content="Init" HorizontalAlignment="Left" Margin="692,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="等待：" HorizontalAlignment="Left" Margin="641,35,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
