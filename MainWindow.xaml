@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PingAndSender"
+        xmlns:l="clr-namespace:PingAndSender"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
         Title="PingAndSender" Height="464" Width="810">
     <Grid Margin="0,0,-8,0">
@@ -27,6 +28,29 @@
         <Label Content="等待：" HorizontalAlignment="Left" Margin="246,36,0,0" VerticalAlignment="Top"/>
         <Label Content="失败次数" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_fail_count" HorizontalAlignment="Left" Height="23" Margin="73,130,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
+        
+                    
+        <Label Content="Parameter" HorizontalAlignment="Left" Margin="332,245,0,0" VerticalAlignment="Top"/>
+                    
+        <RichTextBox x:Name="TextBox_send_result" HorizontalAlignment="Left" Height="90" Margin="73,319,0,0" VerticalAlignment="Top" Width="709">
+            <FlowDocument/>
+        </RichTextBox>
+                    
+        <Label Content="Result" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top"/>
+
+        <l:NotificationAreaIcon
+                      Text="PingAndSender"
+                      Icon="Resources\favicon.ico"
+                      MouseDoubleClick="OnNotificationAreaIconDoubleClick" Grid.ColumnSpan="2">
+            <l:NotificationAreaIcon.MenuItems>
+                <forms:MenuItem Text="关于作者"/>
+                <forms:MenuItem Text="-" />
+                <forms:MenuItem Text="Open" Click="OnMenuItemOpenClick" DefaultItem="True" />
+                <forms:MenuItem Text="-" />
+                <forms:MenuItem Text="Exit" Click="OnMenuItemExitClick" />
+            </l:NotificationAreaIcon.MenuItems>
+        </l:NotificationAreaIcon>
+
         <RichTextBox x:Name="TextBox_header_json" HorizontalAlignment="Left" Height="105" Margin="73,209,0,0" VerticalAlignment="Top" Width="248">
             <FlowDocument>
                 <Paragraph>
@@ -42,12 +66,5 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Label Content="Parameter" HorizontalAlignment="Left" Margin="332,245,0,0" VerticalAlignment="Top"/>
-        <RichTextBox x:Name="TextBox_send_result" HorizontalAlignment="Left" Height="90" Margin="73,319,0,0" VerticalAlignment="Top" Width="709">
-            <FlowDocument/>
-        </RichTextBox>
-        <Label Content="Result" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top"/>
-
-
     </Grid>
 </Window>

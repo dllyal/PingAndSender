@@ -9,6 +9,7 @@ using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Input;
 
 namespace PingAndSender
 {
@@ -44,6 +45,9 @@ namespace PingAndSender
 
         bool doThread = false;
 
+        WindowState lastWindowState;
+        bool shouldClose;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -52,7 +56,7 @@ namespace PingAndSender
             Stop_Button.IsEnabled = false;
 
             //关闭事件
-            this.Closing += Window_Closing;
+            //this.Closing += Window_Closing;
 
             //启动子线程
             Thread thread = new Thread(Thread_DoWork);
@@ -63,6 +67,46 @@ namespace PingAndSender
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Interval = 1000;
             timer.Enabled = true;
+        }
+
+        protected override void OnStateChanged(EventArgs e)
+        {
+            lastWindowState = WindowState;
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            if (!shouldClose)
+            {
+                e.Cancel = true;
+                Hide();
+            }
+        }
+
+        private void OnNotificationAreaIconDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                Open();
+            }
+        }
+
+        private void OnMenuItemOpenClick(object sender, EventArgs e)
+        {
+            Open();
+        }
+
+        private void Open()
+        {
+            Show();
+            WindowState = lastWindowState;
+        }
+
+        private void OnMenuItemExitClick(object sender, EventArgs e)
+        {
+            shouldClose = true;
+            Close();
+            System.Environment.Exit(0);
         }
 
         //定时器定时执行的方法
